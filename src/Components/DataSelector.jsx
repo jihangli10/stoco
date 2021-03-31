@@ -11,50 +11,58 @@ const DataSelector = () => {
     setShowSymbol2(e.target.value === 'stock')
   }
   return (
-    <div className="data-selector">
-    <p>This web app calculates the correlations coefficient between two chronological data.</p>
+    <div className="container data-selector">
+    <p>Stoco calculates the correlations coefficient between two chronological data.</p>
     <p>Please choose any two data</p>
-    <div>
-      <label htmlFor="data1">Data 1</label>
-      <select name="data1" id="data1" onChange={handleData1Change}>
-        <option value="stock">Stock</option>
-        <option value="market-index">Dow Jones Index</option>
-        <option value="GDP">GDP of US</option>
-        <option value="real-estate">Real Estate Price</option>
-        <option value="global-temp">Global Temperature</option>
-        <option value="co2">CO2 Concentration</option>
-      </select>
-      {showSymbol1? <div>
+    <div className="row">
+      <div className="data-type">
+        <label htmlFor="data1">Data 1</label>
+        <select className="input-box" name="data1" id="data1" onChange={handleData1Change}>
+          <option value="stock">Stock Price</option>
+          <option value="market-index">Dow Jones Index</option>
+          <option value="GDP">US GDP</option>
+          <option value="real-estate">Real Estate Price</option>
+          <option value="global-temp">Global Temperature</option>
+          <option value="co2">CO2 Concentration</option>
+        </select>
+      </div>
+      {showSymbol1? <div className="stock-symbol">
         <label htmlFor="symbol1">Stock Symbol</label>
-        <input type="text" id="symbol1" />
+        <input className="input-box" type="text" id="symbol1" value="TSLA"/>
       </div> : null}
     </div>
-    <div>
-      <label htmlFor="data2">Data 2</label>
-      <select name="data2" id="data2" onChange={handleData2Change}>
-        <option value="stock">Stock</option>
-        <option value="market-index">Dow Jones Index</option>
-        <option value="GDP">GDP of US</option>
-        <option value="real-estate">Real Estate Price</option>
-        <option value="global-temp">Global Temperature</option>
-        <option value="co2">CO2 Concentration</option>
-      </select>
-      {showSymbol2? <div>
+    <div className="row">
+      <div className="data-type">
+        <label htmlFor="data2">Data 2</label>
+        <select className="input-box" name="data2" id="data2" onChange={handleData2Change}>
+          <option value="stock">Stock Price</option>
+          <option value="market-index">Dow Jones Index</option>
+          <option value="GDP">US GDP</option>
+          <option value="real-estate">Real Estate Price</option>
+          <option value="global-temp">Global Temperature</option>
+          <option value="co2">CO2 Concentration</option>
+        </select>
+      </div>
+      {showSymbol2? <div className="stock-symbol">
         <label htmlFor="symbol2">Stock Symbol</label>
-        <input type="text" id="symbol2" />
+        <input className="input-box" type="text" id="symbol2" value="AAPL"/>
       </div> : null}
     </div>
-    <div>
-      <label htmlFor="start">Start Date:</label>
-      <input type="date" id="start" name="start"
-       value="2016-01-01"
-       min="1970-01-01" max="2021-04-02" />
-      <label htmlFor="end">End Date:</label>
-      <input type="date" id="end" name="end"
-       value="2021-04-01"
-       min="1970-01-01" max="2021-04-02" />
+    <div className="row">
+      <div className="date-input">
+        <label htmlFor="start">Start Date:</label>
+        <input className="input-box" type="date" id="start" name="start"
+         value="2016-01-01"
+         min="1970-01-01" max="2021-04-02" />
+      </div>
+      <div className="date-input">
+        <label htmlFor="end">End Date:</label>
+        <input className="input-box" type="date" id="end" name="end"
+         value="2021-04-01"
+         min="1970-01-01" max="2021-04-02" />
+       </div>
     </div>
-    <button>Submit</button>
+    <button className="row">Submit</button>
   </div>
   )
 };
