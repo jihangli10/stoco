@@ -49,3 +49,50 @@ button {
   width: 200px;
   font-size: 18px;
 }
+.result-header {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+/* The slider */
+.slider-container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+  height: 40px;
+  display: flex;
+  text-align: center;
+}
+.slider {
+  -webkit-appearance: none;  /* Override default CSS styles */
+  appearance: none;
+  width: 100%; /* Full-width */
+  vertical-align: text-bottom;
+  height: 10px; /* Specified height */
+  position: relative;
+  top: 6px;
+  border-radius: 5px;
+  background-image: linear-gradient(to right, rgba(16,10,126,1), white, rgba(192,60,60,1)); /* Grey background */
+  outline: none; /* Remove outline */
+  opacity: 1; /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+  transition: opacity .2s;
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #AAA;
+}
+
+.slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #AAA;
+}
