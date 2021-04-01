@@ -33,17 +33,16 @@ const DataSelector = ({
   return (
     <div className="container data-selector">
     <p>Stoco calculates the correlations coefficient between two chronological data.</p>
-    <p>Please choose two data</p>
+    <p>Please select two data</p>
     <div className="row">
       <div className="data-type">
         <label htmlFor="data1">Data 1</label>
         <select className="input-box" name="data1" id="data1" onChange={handleData1Change}>
           <option value="stock">Stock Price</option>
-          <option value="Dow Jones Index">Dow Jones Index</option>
-          <option value="US GDP">US GDP</option>
-          <option value="House Price">House Price</option>
+          <option value="Dow Jones">Dow Jones</option>
           <option value="Oil Price">Oil Price</option>
-          <option value="Global Temperature">Global Temperature</option>
+          <option value="Interest Rate">Interest Rate</option>
+          <option value="Temperature Anomalies">Temperature Anomalies</option>
           <option value="CO2 Concentration">CO2 Concentration</option>
         </select>
       </div>
@@ -57,11 +56,10 @@ const DataSelector = ({
         <label htmlFor="data2">Data 2</label>
         <select className="input-box" name="data2" id="data2" onChange={handleData2Change}>
           <option value="stock">Stock Price</option>
-          <option value="Dow Jones Index">Dow Jones Index</option>
-          <option value="US GDP">US GDP</option>
-          <option value="House Price">House Price</option>
+          <option value="Dow Jones">Dow Jones</option>
           <option value="Oil Price">Oil Price</option>
-          <option value="Global Temperature">Global Temperature</option>
+          <option value="Interest Rate">Interest Rate</option>
+          <option value="Temperature Anomalies">Temperature Anomalies</option>
           <option value="CO2 Concentration">CO2 Concentration</option>
         </select>
       </div>
@@ -86,7 +84,7 @@ const DataSelector = ({
          onChange={handleEndDateChange}/>
        </div>
     </div>
-    <button className="row" onClick={handleSubmit}>Submit</button>
+    <button className="row" onClick={handleSubmit}>Calculate</button>
   </div>
   )
 };

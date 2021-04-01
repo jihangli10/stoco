@@ -2,7 +2,12 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
 const axios = require('axios');
-const config = require('./config.js')
+const config = require('./config.js');
+const oil = require('./data/oil.json');
+const co2 = require('./data/co2.json');
+const temp = require('./data/temp.json');
+const dji = require('./data/dji.json');
+const ir = require('./data/ir.json');
 const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -19,6 +24,26 @@ app.get('/stock', (req, res) => {
   .then(data => {
     res.status(200).send(data.data);
   })
+});
+
+app.get('/oil', (req, res) => {
+  res.status(200).send(oil);
+});
+
+app.get('/co2', (req, res) => {
+  res.status(200).send(co2);
+});
+
+app.get('/temp', (req, res) => {
+  res.status(200).send(temp);
+});
+
+app.get('/dji', (req, res) => {
+  res.status(200).send(dji);
+});
+
+app.get('/ir', (req, res) => {
+  res.status(200).send(ir);
 });
 
 const port = 3000;

@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import DataSelector from './DataSelector.jsx';
 import Result from './Result.jsx';
 import ajax from '../lib/ajax.js';
@@ -15,7 +15,7 @@ const App = () => {
   const [showResult, setShowResult] = useState(false);
   const [correlation, setCorrelation] = useState(0);
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = e => {
     e.preventDefault();
     handleGet(data1Type, stock1, (rawData1) => {
       handleGet(data2Type, stock2, (rawData2) => {
@@ -27,11 +27,31 @@ const App = () => {
         setShowResult(true);
       })
     });
-  }
+  };
 
   const handleGet = (dataType, stock, callback) => {
     if (dataType === 'stock') {
       ajax.getStock(stock, data => {
+        callback(data);
+      })
+    } else if (dataType === 'Oil Price') {
+      ajax.getOil(data => {
+        callback(data);
+      })
+    } else if (dataType === 'CO2 Concentration') {
+      ajax.getCO2(data => {
+        callback(data);
+      })
+    } else if (dataType === 'Temperature Anomalies') {
+      ajax.getTemp(data => {
+        callback(data);
+      })
+    } else if (dataType === 'Dow Jones') {
+      ajax.getDji(data => {
+        callback(data);
+      })
+    } else if (dataType === 'Interest Rate') {
+      ajax.getIr(data => {
         callback(data);
       })
     }
@@ -68,7 +88,7 @@ const App = () => {
   return (
     <div className="App">
     <header className="header">
-      <h2>stoco</h2>
+      <h2>stoco.</h2>
     </header>
     <main>
       <DataSelector

@@ -1,7 +1,7 @@
 import React from 'react';
 import {Line} from 'react-chartjs-2';
 
-const Result = ({data, data1Type, data2Type, stock1, stock2, startDate, endDate, correlation}) => {
+const Result = React.memo(({data, data1Type, data2Type, stock1, stock2, startDate, endDate, correlation}) => {
   let label1;
   let label2;
   if (data1Type === 'stock') {
@@ -104,6 +104,8 @@ const Result = ({data, data1Type, data2Type, stock1, stock2, startDate, endDate,
     />
    </div>
   )
-};
+}, (prevProp, nextProp) => {
+  return prevProp.data === nextProp.data;
+});
 
 export default Result;
