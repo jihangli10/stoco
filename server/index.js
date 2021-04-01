@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
 const axios = require('axios');
-const config = require('./config.js');
+// const config = require('./config.js');
 const oil = require('./data/oil.json');
 const co2 = require('./data/co2.json');
 const temp = require('./data/temp.json');
@@ -18,7 +18,7 @@ app.get('/stock', (req, res) => {
   axios.get(url, { params: {
     symbol: req.query.symbol,
     function: 'TIME_SERIES_MONTHLY_ADJUSTED',
-    apikey: config.stockToken
+    apikey: process.env['stockToken']
     }
   })
   .then(data => {
