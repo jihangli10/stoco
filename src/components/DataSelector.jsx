@@ -32,7 +32,7 @@ const DataSelector = ({
   }
   return (
     <div className="container data-selector">
-    <p>Stoco calculates the correlations coefficient between two chronological data.</p>
+    <p>Stoco calculates the correlation coefficient between two chronological data.</p>
     <p>Please select two data</p>
     <div className="row">
       <div className="data-type">
