@@ -4,10 +4,6 @@
 
 This web app calculates and displays the correlation coefficient between two selected chronological data, which can be helpful in investment decisions.
 
-<p align="center">
-  <img width="500" src="https://i.ibb.co/FmyMnpz/53z3na.jpg">
-</p>
-
 ## Visuals
 
 [This is a link to the demonstration](https://morning-stream-12779.herokuapp.com/)
@@ -43,3 +39,7 @@ Temperature and CO2: https://www.noaa.gov/
 ## License
 
 MIT license
+
+<p align="center">
+  <img width="500" src="https://i.ibb.co/FmyMnpz/53z3na.jpg">
+</p>
