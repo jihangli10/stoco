@@ -3,7 +3,10 @@
 ## Description
 
 This web app calculates and displays the correlation coefficient between two selected chronological data, which can be helpful in investment decisions.
-![correlation is correlation](https://i.ibb.co/FmyMnpz/53z3na.jpg)
+
+<p align="center">
+  <img width="500" src="https://i.ibb.co/FmyMnpz/53z3na.jpg">
+</p>
 
 ## Visuals
 
