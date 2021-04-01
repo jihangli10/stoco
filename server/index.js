@@ -18,7 +18,7 @@ app.get('/stock', (req, res) => {
   axios.get(url, { params: {
     symbol: req.query.symbol,
     function: 'TIME_SERIES_MONTHLY_ADJUSTED',
-    apikey: process.env['stockToken']
+    apikey: process.env.stockToken
     }
   })
   .then(data => {
