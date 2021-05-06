@@ -11,7 +11,7 @@ const App = () => {
   const [stock1, setStock1] = useState('AAPL');
   const [stock2, setStock2] = useState('TSLA');
   const [startDate, setStartDate] = useState('2016-01-01');
-  const [endDate, setEndDate] = useState('2021-04-01');
+  const [endDate, setEndDate] = useState('2021-05-05');
   const [showResult, setShowResult] = useState(false);
   const [correlation, setCorrelation] = useState(0);
 

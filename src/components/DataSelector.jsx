@@ -11,11 +11,11 @@ const DataSelector = ({
   const [showSymbol2, setShowSymbol2] = useState(true);
 
   const handleData1Change = (e) => {
-    setShowSymbol1(e.target.value === 'stock');
+    setShowSymbol1(e.target.value === 'stock' || e.target.value === 'crypto');
     setData1Type(e.target.value);
   }
   const handleData2Change = (e) => {
-    setShowSymbol2(e.target.value === 'stock');
+    setShowSymbol2(e.target.value === 'stock' || e.target.value === 'crypto');
     setData2Type(e.target.value);
   }
   const handleStock1Change = (e) => {
@@ -39,6 +39,7 @@ const DataSelector = ({
         <label htmlFor="data1">Data 1</label>
         <select className="input-box" name="data1" id="data1" onChange={handleData1Change}>
           <option value="stock">Stock Price</option>
+          <option value="crypto">Crypto Currencies</option>
           <option value="Dow Jones">Dow Jones</option>
           <option value="Oil Price">Oil Price</option>
           <option value="Interest Rate">Interest Rate</option>
@@ -47,7 +48,7 @@ const DataSelector = ({
         </select>
       </div>
       {showSymbol1? <div className="stock-symbol">
-        <label htmlFor="symbol1">Stock Symbol</label>
+        <label htmlFor="symbol1">Stock/Crypto Symbol</label>
         <input className="input-box" type="text" id="symbol1" value={stock1} onChange={handleStock1Change}/>
       </div> : null}
     </div>
@@ -56,6 +57,7 @@ const DataSelector = ({
         <label htmlFor="data2">Data 2</label>
         <select className="input-box" name="data2" id="data2" onChange={handleData2Change}>
           <option value="stock">Stock Price</option>
+          <option value="crypto">Crypto Currencies</option>
           <option value="Dow Jones">Dow Jones</option>
           <option value="Oil Price">Oil Price</option>
           <option value="Interest Rate">Interest Rate</option>
@@ -64,7 +66,7 @@ const DataSelector = ({
         </select>
       </div>
       {showSymbol2? <div className="stock-symbol">
-        <label htmlFor="symbol2">Stock Symbol</label>
+        <label htmlFor="symbol2">Stock/Crypto Symbol</label>
         <input className="input-box" type="text" id="symbol2" value={stock2} onChange={handleStock2Change}/>
       </div> : null}
     </div>
@@ -73,14 +75,14 @@ const DataSelector = ({
         <label htmlFor="start">Start Date:</label>
         <input className="input-box" type="date" id="start" name="start"
          value={startDate}
-         min="1970-01-01" max="2021-04-02"
+         min="1970-01-01" max="2021-05-05"
          onChange={handleStartDateChange}/>
       </div>
       <div className="date-input">
         <label htmlFor="end">End Date:</label>
         <input className="input-box" type="date" id="end" name="end"
          value={endDate}
-         min="1970-01-01" max="2021-04-02"
+         min="1970-01-01" max="2021-05-05"
          onChange={handleEndDateChange}/>
        </div>
     </div>
