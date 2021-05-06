@@ -10,6 +10,15 @@ const ajax = {
         throw new Error(err);
       })
   },
+  getCrypto: (symbol, callback) => {
+    return axios.get('/crypto', { params: { symbol } })
+      .then(data => {
+        processor.cryptoProcess(data.data, callback);
+      })
+      .catch(err => {
+        throw new Error(err);
+      })
+  },
   getOil: (callback) => {
     return axios.get('/oil')
     .then(data => {

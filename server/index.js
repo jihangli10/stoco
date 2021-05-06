@@ -9,6 +9,7 @@ const temp = require('./data/temp.json');
 const dji = require('./data/dji.json');
 const ir = require('./data/ir.json');
 const app = express();
+require('dotenv').config();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, "../build")));
@@ -19,6 +20,19 @@ app.get('/stock', (req, res) => {
     symbol: req.query.symbol,
     function: 'TIME_SERIES_MONTHLY_ADJUSTED',
     apikey: process.env.stockToken
+    }
+  })
+  .then(data => {
+    res.status(200).send(data.data);
+  })
+});
+
+app.get('/crypto', (req, res) => {
+  const url = 'https://rest.coinapi.io/v1/';
+  axios.get(url, { params: {
+    asset_id: req.query.symbol,
+    period_id: '1MTH',
+    apikey: process.env.cryptoToken
     }
   })
   .then(data => {

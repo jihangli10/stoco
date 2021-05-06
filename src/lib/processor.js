@@ -6,6 +6,10 @@ const processer = {
     let dateArray = Object.keys(stockData['Monthly Adjusted Time Series']);
     var data = dateArray.map((date, index) => {return {x:date, y:valueArray[index]}});
     callback(data);
+  },
+  cryptoProcess: (cryptoData, callback) => {
+    // Wait for implementation
+    callback(data);
   }
 }
 export default processer;
