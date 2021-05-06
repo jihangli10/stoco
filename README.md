@@ -2,7 +2,7 @@
 
 ## Description
 
-This web app calculates and displays the correlation coefficient between two selected chronological data, which can be helpful in investment decisions.
+This web app calculates and displays the correlation coefficient between two assets or chronological data, which can be helpful in investment decisions.
 
 ## Visuals
 
@@ -31,6 +31,7 @@ Author: Jihang Li
 ## Data Sources
 
 Stocks: https://www.alphavantage.co/
+Cryptocurrencies: https://www.coinapi.io/
 Dow Jones: https://finance.yahoo.com/
 Crude Oil Price: https://www.worldbank.org/
 Interest Rate: https://fred.stlouisfed.org/
@@ -40,6 +41,3 @@ Temperature and CO2: https://www.noaa.gov/
 
 MIT license
 
-<p align="center">
-  <img width="500" src="https://i.ibb.co/FmyMnpz/53z3na.jpg">
-</p>
