@@ -34,6 +34,10 @@ const App = () => {
       ajax.getStock(stock, data => {
         callback(data);
       })
+    } else if (dataType === 'crypto') {
+      ajax.getCrypto(stock, data => {
+        callback(data);
+      })
     } else if (dataType === 'Oil Price') {
       ajax.getOil(data => {
         callback(data);

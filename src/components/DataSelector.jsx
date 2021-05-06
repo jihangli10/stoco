@@ -13,10 +13,20 @@ const DataSelector = ({
   const handleData1Change = (e) => {
     setShowSymbol1(e.target.value === 'stock' || e.target.value === 'crypto');
     setData1Type(e.target.value);
+    if (e.target.value === 'crypto') {
+      setStock1('BTC');
+    } else if (e.target.value === 'stock') {
+      setStock1('AAPL');
+    }
   }
   const handleData2Change = (e) => {
     setShowSymbol2(e.target.value === 'stock' || e.target.value === 'crypto');
     setData2Type(e.target.value);
+    if (e.target.value === 'crypto') {
+      setStock2('ETH');
+    } else if (e.target.value === 'stock') {
+      setStock2('TSLA');
+    }
   }
   const handleStock1Change = (e) => {
     setStock1(e.target.value);
@@ -39,7 +49,7 @@ const DataSelector = ({
         <label htmlFor="data1">Data 1</label>
         <select className="input-box" name="data1" id="data1" onChange={handleData1Change}>
           <option value="stock">Stock Price</option>
-          <option value="crypto">Crypto Currencies</option>
+          <option value="crypto">Cryptocurrency</option>
           <option value="Dow Jones">Dow Jones</option>
           <option value="Oil Price">Oil Price</option>
           <option value="Interest Rate">Interest Rate</option>
@@ -57,7 +67,7 @@ const DataSelector = ({
         <label htmlFor="data2">Data 2</label>
         <select className="input-box" name="data2" id="data2" onChange={handleData2Change}>
           <option value="stock">Stock Price</option>
-          <option value="crypto">Crypto Currencies</option>
+          <option value="crypto">Cryptocurrency</option>
           <option value="Dow Jones">Dow Jones</option>
           <option value="Oil Price">Oil Price</option>
           <option value="Interest Rate">Interest Rate</option>

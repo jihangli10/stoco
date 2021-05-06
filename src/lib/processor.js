@@ -4,11 +4,17 @@ const processer = {
       return Number(item['5. adjusted close'])
     });
     let dateArray = Object.keys(stockData['Monthly Adjusted Time Series']);
-    var data = dateArray.map((date, index) => {return {x:date, y:valueArray[index]}});
+    let data = dateArray.map((date, index) => {return {x:date, y:valueArray[index]}});
     callback(data);
   },
   cryptoProcess: (cryptoData, callback) => {
-    // Wait for implementation
+    let valueArray = cryptoData.map(item => {
+      return item.price_close;
+    }).reverse();
+    let dateArray = cryptoData.map(item => {
+      return item.time_period_end;
+    }).reverse();
+    let data = dateArray.map((date, index) => {return {x:date, y:valueArray[index]}});
     callback(data);
   }
 }

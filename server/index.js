@@ -28,15 +28,20 @@ app.get('/stock', (req, res) => {
 });
 
 app.get('/crypto', (req, res) => {
-  const url = 'https://rest.coinapi.io/v1/';
+  const url = `https://rest.coinapi.io/v1/ohlcv/${req.query.symbol}/USD/history`;
   axios.get(url, { params: {
     asset_id: req.query.symbol,
     period_id: '1MTH',
+    time_start: '2009-01-09T00:00:00',
     apikey: process.env.cryptoToken
     }
   })
   .then(data => {
     res.status(200).send(data.data);
+  })
+  .catch(err => {
+    console.log(err);
+    res.sendStatus(500);
   })
 });
 

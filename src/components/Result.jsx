@@ -4,12 +4,12 @@ import {Line} from 'react-chartjs-2';
 const Result = React.memo(({data, data1Type, data2Type, stock1, stock2, startDate, endDate, correlation}) => {
   let label1;
   let label2;
-  if (data1Type === 'stock') {
+  if (data1Type === 'stock' || data1Type === 'crypto') {
     label1 = stock1;
   } else {
     label1 = data1Type;
   }
-  if (data2Type === 'stock') {
+  if (data2Type === 'stock' || data1Type === 'crypto') {
     label2 = stock2;
   } else {
     label2 = data2Type;
